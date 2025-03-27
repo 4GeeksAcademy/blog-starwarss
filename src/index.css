@@ -112,3 +112,46 @@
     transform: scale(1.1);
     filter: brightness(110%) contrast(110%);
   }
+
+  #details-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#details-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+#details-container p {
+    font-size: 16px;
+    color: #6c757d;
+    margin: 5px 0;
+    text-transform: capitalize;
+}
+
+#details-container .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+#details-container .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+#details-container .btn-primary:hover {
+    background-color: #0056b3;
+}

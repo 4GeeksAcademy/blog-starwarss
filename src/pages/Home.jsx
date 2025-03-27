@@ -18,7 +18,7 @@ export const Home = () => {
     };
 
     loadSWAPIData();
-  }, [dispatch]);
+  }, []);
 
   const renderSection = (title, items, type) => (
     <div className="mb-5">

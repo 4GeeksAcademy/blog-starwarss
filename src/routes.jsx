@@ -1,25 +1,22 @@
 import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
 } from "react-router-dom";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
-
-// Importar el nuevo componente de Favoritos
 import { Favorites } from "./pages/Favorites";
 
 export const router = createBrowserRouter(
-    createRoutesFromElements(
+  createRoutesFromElements(
       <Route path="/" element={<Layout />} errorElement={<h1>Not found!</h1>} >
-        <Route path= "/" element={<Home />} />
-        <Route path="/single/:theId" element={ <Single />} />
-        <Route path="/demo" element={<Demo />} />
-        <Route path="/:type/:uid" element={ <Single />} />
-        <Route path="/favorites" element={<Favorites />} />
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/single/:theId" element={<Single />} />  */}
+          <Route path="/demo" element={<Demo />} /> 
+          <Route path="/:type/:uid" element={<Single />} />
+          <Route path="/favorites" element={<Favorites />} />
       </Route>
-    )
+  )
 );
-
