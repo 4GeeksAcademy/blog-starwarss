@@ -1,19 +1,28 @@
 import { Link } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const Navbar = () => {
+  const { store } = useGlobalReducer();
 
-	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
-		</nav>
-	);
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div className="container">
+        <Link to="/" className="navbar-brand d-flex align-items-center">
+          <span className="glitch-text" style={{color: '#FFE81F', fontSize: '1.5rem'}}>
+            Star Wars 
+          </span>
+        </Link>
+        <div className="ms-auto">
+          <Link to="/favorites" className="text-decoration-none">
+            <button className="btn btn-outline-warning position-relative">
+              Favorites 
+              <span className="badge bg-danger ms-2 rounded-circle">
+                {store.favorites.length}
+              </span>
+            </button>
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
 };

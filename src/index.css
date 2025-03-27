@@ -1,0 +1,114 @@
+:root {
+    /* Paleta de colores inspirada en Star Wars */
+    --sw-background: #121212;
+    --sw-primary: #FFE81F;  /* Amarillo estilo Star Wars */
+    --sw-secondary: #1E88E5; /* Azul brillante */
+    --sw-text: #F4F4F4;
+    --sw-card-bg: #1E1E1E;
+  }
+  
+  body {
+    background-color: var(--sw-background);
+    color: var(--sw-text);
+    font-family: 'Montserrat', 'Star Jedi', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Estilos para tarjetas */
+  .card {
+    background-color: var(--sw-card-bg);
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--sw-text);
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 232, 31, 0.2);
+  }
+  
+  /* Botones con estilo Star Wars */
+  .btn-primary {
+    background-color: var(--sw-primary);
+    color: var(--sw-background);
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--sw-secondary);
+    transform: translateY(-3px);
+  }
+  
+  /* Navbar estilizada */
+  .navbar {
+    background-color: rgba(30, 30, 30, 0.9) !important;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Efecto de texto */
+  .glitch-text {
+    animation: glitch 1s infinite;
+  }
+  
+  @keyframes glitch {
+    2%, 64% {
+      transform: translate(2px, 0) skew(0deg);
+    }
+    4%, 60% {
+      transform: translate(-2px, 0) skew(0deg);
+    }
+    62% {
+      transform: translate(0, 0) skew(5deg);
+    }
+  }
+  
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--sw-background);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--sw-primary);
+    border-radius: 5px;
+  }
+  
+  /* Efectos de hover para cards */
+  .card-hover-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg, 
+      transparent, 
+      rgba(255, 232, 31, 0.2), 
+      transparent
+    );
+    transition: all 0.6s;
+  }
+  
+  .card-hover-effect:hover::before {
+    left: 100%;
+  }
+
+  .card-img-top {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.1);
+    filter: brightness(110%) contrast(110%);
+  }

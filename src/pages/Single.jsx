@@ -10,7 +10,7 @@ export const Single = props => {
   const { store } = useGlobalReducer()
 
   // Retrieve the 'theId' URL parameter using useParams hook.
-  const { theId } = useParams()
+  const { type, uid } = useParams()
   const singleTodo = store.todos.find(todo => todo.id === parseInt(theId));
 
   return (
